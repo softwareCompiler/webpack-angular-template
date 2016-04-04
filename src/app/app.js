@@ -37,10 +37,10 @@ const MODULE_NAME = 'app';
 
 angular.module(MODULE_NAME, [uiRouter])
   .directive('app', app)
-  .config(function($stateProvider) {
+  .config(['$stateProvider', function($stateProvider) {
     console.log('class config $routeProvider ' + $stateProvider);
 
-  })
+  }])
 .controller('AppCtrl', ['$scope', AppCtrl]);
 
 export default MODULE_NAME;

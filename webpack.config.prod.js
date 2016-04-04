@@ -13,6 +13,9 @@ const PROD_DOMAIN = 'domain';
 const PROD_ROOT_PATH = '/' + PROD_DOMAIN;
 const PreBuildTask = `ls -l ${PROD_DOMAIN} && rm -rf  ${PROD_DOMAIN} && ls -l ${PROD_DOMAIN}`;
 console.log('PreBuildTask ' + PreBuildTask);
+
+require('url-loader');
+
   
 module.exports = function makeWebpackConfig() {
   var config = {};
@@ -44,7 +47,10 @@ module.exports = function makeWebpackConfig() {
     }, {
       test: /\.html$/,
       loader: 'raw'
-    }]
+    },
+          { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff" },
+      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
+]
   };
   config.postcss = [
     autoprefixer({
