@@ -12,11 +12,14 @@ const WebpackShellPlugin = require('webpack-shell-plugin');
 const PROD_DOMAIN = 'domain';
 const PROD_ROOT_PATH = '/' + PROD_DOMAIN;
 const PreBuildTask = `ls -l ${PROD_DOMAIN} && rm -rf  ${PROD_DOMAIN} && ls -l ${PROD_DOMAIN}`;
-console.log('PreBuildTask ' + PreBuildTask);
+const PROD_DEPLOY_PATH = '/www';
+const PostBuildTask = `cp -r ${PROD_DOMAIN} ${PROD_DEPLOY_PATH}`;
+
+console.log('PostBuildTask ' + PostBuildTask);
 
 require('url-loader');
 
-  
+
 module.exports = function makeWebpackConfig() {
   var config = {};
   config.entry = {
@@ -47,10 +50,13 @@ module.exports = function makeWebpackConfig() {
     }, {
       test: /\.html$/,
       loader: 'raw'
-    },
-          { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff" },
-      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
-]
+    }, {
+      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader: "url-loader?limit=10000&minetype=application/font-woff"
+    }, {
+      test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader: "file-loader"
+    }]
   };
   config.postcss = [
     autoprefixer({
@@ -63,9 +69,10 @@ module.exports = function makeWebpackConfig() {
   config.plugins = [];
 
   config.plugins.push(
+
     new WebpackShellPlugin({
       onBuildStart: [PreBuildTask],
-      onBuildEnd: [`echo "Ending "${PROD_ROOT_PATH}`]
+      onBuildEnd: ['echo "endddddd" && ls -l ./domain', PostBuildTask, 'echo "endddddd222"']
     }),
     new HtmlWebpackPlugin({
       template: './src/public/index.prod.html',
@@ -84,10 +91,13 @@ module.exports = function makeWebpackConfig() {
     new webpack.optimize.UglifyJsPlugin(),
 
     new CopyWebpackPlugin(
-      [{from: __dirname + '/src/public'}], 
-      {
-      ignore: [{glob: '**/*.prod.html'}]
-    }),
+      [{
+        from: __dirname + '/src/public'
+      }], {
+        ignore: [{
+          glob: '**/*.prod.html'
+        }]
+      }),
     new OfflinePlugin({
       // All options are optional
       caches: 'all',
