@@ -4,7 +4,7 @@ import uiRouter from 'angular-ui-router';
 
 // necessary for css to work
 import '../style/app.css';
-// import '../../node_modules/font-awesome/css/font-awesome.min.css';
+import '../../node_modules/font-awesome/css/font-awesome.min.css';
 
 require("font-awesome-webpack");
 

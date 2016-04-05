@@ -52,7 +52,7 @@ module.exports = function makeWebpackConfig() {
       loader: 'raw'
     }, {
       test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      loader: "url-loader?limit=10000&minetype=application/font-woff"
+      loader: "url-loader?minetype=application/font-woff"
     }, {
       test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
       loader: "file-loader"
@@ -72,7 +72,7 @@ module.exports = function makeWebpackConfig() {
 
     new WebpackShellPlugin({
       onBuildStart: [PreBuildTask],
-      onBuildEnd: ['echo "endddddd" && ls -l ./domain', PostBuildTask, 'echo "endddddd222"']
+      onExit: ['echo "endddddd" && ls -l ./domain', PostBuildTask, 'echo "exitttt"']
     }),
     new HtmlWebpackPlugin({
       template: './src/public/index.prod.html',
