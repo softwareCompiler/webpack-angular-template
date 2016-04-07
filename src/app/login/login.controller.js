@@ -25,11 +25,9 @@ const loginModule = angular.module('app.login', [uiRouter])
     console.log('class login ' + $stateProvider);
     $stateProvider.state('login', {
     	url: '/login',
-    	template: "<h1>heyyy</h1>",
+    	template: require('./login.html'),
     	controller: 'LoginCtrl'
-  });
-
-
+  	});
   }])
 .controller('LoginCtrl', ['$scope', LoginCtrl]);
 
