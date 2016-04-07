@@ -7,6 +7,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var OfflinePlugin = require('offline-plugin');
 
+require('string-replace-loader');
+
 const WebpackShellPlugin = require('webpack-shell-plugin');
 
 const PROD_DOMAIN = 'domain';
@@ -56,6 +58,14 @@ module.exports = function makeWebpackConfig() {
     }, {
       test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
       loader: "file-loader"
+    },
+    {
+      test: /src\/public\/index\.html$/,
+      loader: 'string-replace',
+      query: {
+        search: '<base href="/">',
+        replace: `<base href="/${PROD_DOMAIN}/">`
+      }
     }]
   };
   config.postcss = [
@@ -63,8 +73,6 @@ module.exports = function makeWebpackConfig() {
       browsers: ['last 2 version']
     })
   ];
-
-
 
   config.plugins = [];
 
@@ -75,7 +83,7 @@ module.exports = function makeWebpackConfig() {
       onExit: ['echo "endddddd" && ls -l ./domain', PostBuildTask, 'echo "exitttt"']
     }),
     new HtmlWebpackPlugin({
-      template: './src/public/index.prod.html',
+      template: './src/public/index.html',
       filename: 'index.html',
       inject: 'body'
     }),
