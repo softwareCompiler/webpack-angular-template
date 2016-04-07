@@ -1,6 +1,6 @@
 {
     "name": "app",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Hao Qin <hqin@liyutech.com>",
     "description": "Template for angular-webpack projects, modified from https://github.com/preboot/angular-webpack.git",
     "engines": {
