@@ -2,34 +2,40 @@ import angular from 'angular';
 
 import uiRouter from 'angular-ui-router';
 
-// See https://webpack.github.io/docs/context.html for inspiration
-
-var req = require.context('.', true, /\.controller\.js$/);
-
-function requireAll(requireContext) {
+function requireAll(requireContext, requireControllers) {
   return requireContext.keys().map(function(key) {
+    console.log(`key ${key}`);
     var importModule = requireContext(key);
-    return importModule.default.name;
+    if (requireControllers) {
+      return importModule.default.name;
+    }
+    else {
+      return key;
+    }
   });
 }
 
-let requires = requireAll(req);
-requires.push(uiRouter);
+// See https://webpack.github.io/docs/context.html for inspiration
+var reqControllers = require.context('.', true, /\.controller\.js$/);
+let requiredControllers = requireAll(reqControllers, true);
+requiredControllers.push(uiRouter);
+
+// const reqCssRules = require.context('.', true, /\.\(c|le\)ss$/);
+const reqCssRules = require.context('..', true, /\.(c|le)ss$/);
+requireAll(reqCssRules);
 
 // necessary for css to work
-import '../style/app.css';
 import '../../node_modules/font-awesome/css/font-awesome.min.css';
 
 require("font-awesome-webpack");
 
 // install caching service worker
-// import offline from 'offline-plugin/runtime'
-
-// offline.install();
+import offline from 'offline-plugin/runtime'
+offline.install();
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, requires)
+angular.module(MODULE_NAME, requiredControllers)
   .config(['$stateProvider', '$locationProvider', function($stateProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
     $stateProvider.state('home', {
@@ -40,8 +46,6 @@ angular.module(MODULE_NAME, requires)
   }])
   .controller('AppCtrl', ['$scope', '$state', function($scope, $state) {
     console.log('within AppCtrl');
-    // $state.go('home');
-
   }]);
 
 export default MODULE_NAME;

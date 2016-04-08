@@ -77,10 +77,9 @@ module.exports = function makeWebpackConfig() {
   config.plugins = [];
 
   config.plugins.push(
-
     new WebpackShellPlugin({
       onBuildStart: [PreBuildTask],
-      onExit: ['echo "endddddd" && ls -l ./domain', PostBuildTask, 'echo "exitttt"']
+      onExit: [PostBuildTask]
     }),
     new HtmlWebpackPlugin({
       template: './src/public/index.html',
@@ -101,11 +100,7 @@ module.exports = function makeWebpackConfig() {
     new CopyWebpackPlugin(
       [{
         from: __dirname + '/src/public'
-      }], {
-        ignore: [{
-          glob: '**/*.prod.html'
-        }]
-      }),
+      }]),
     new OfflinePlugin({
       // All options are optional
       caches: 'all',
