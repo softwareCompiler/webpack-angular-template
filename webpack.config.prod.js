@@ -20,7 +20,7 @@ const PostBuildTask = `cp -r ${PROD_DOMAIN} ${PROD_DEPLOY_PATH}`;
 console.log('PostBuildTask ' + PostBuildTask);
 
 require('url-loader');
-
+require('less-loader');
 
 module.exports = function makeWebpackConfig() {
   var config = {};
@@ -46,7 +46,12 @@ module.exports = function makeWebpackConfig() {
     }, {
       test: /\.css$/,
       loader: ExtractTextPlugin.extract('style', 'css?sourceMap!postcss')
-    }, {
+    }, 
+    {
+        test: /\.less$/,
+        loader: "style!css!less"
+      },
+      {
       test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
       loader: 'file'
     }, {

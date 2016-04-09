@@ -45,7 +45,7 @@ module.exports = function makeWebpackConfig() {
    */
   config.output = isTest ? {} : {
     // Absolute output directory
-    path: __dirname + '/fc',
+    path: __dirname + '/domain',
 
     // Output path from the view of the page
     // Uses webpack-dev-server in development

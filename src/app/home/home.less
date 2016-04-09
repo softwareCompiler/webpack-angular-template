@@ -1,29 +1,36 @@
-@marginTop1: 1em;
-@marginTop2: 2em;
-@borderRadius: 5px;
+body {
+  width: 80%;
+  margin: 1% auto;
+}
+
 @navColor:  #5cb85c;
 @navFontColor: #ffffff;
-.margin-right {
-	margin-right: 1em;
+@borderRadius: 0.5em;
+
+.navbar-header {
+  width: 96%;
+  margin: 1%;
+  display: inline-block;
+  vertical-align: middle;
 }
-.margin-left {
-	margin-left: 0.5em;
+
+.navbar-brand {
+  color: @navFontColor;
 }
+
+.navigation, .home {
+  background-color: @navColor;
+  border-color: #4cae4c;
+  min-height: 2em;
+  text-align: justify;
+  cursor: default;
+  border-radius: @borderRadius;
+}
+
 .margin-top {
   margin-top: 1em;
 }
-.display-inline{
-  display: inline;
-}
-.display-inlineBlock{
-  display: inline-block;
-}
-.scroll {
-  height: 58em;
-  margin-top: 1em;
-  overflow: scroll;
-  width: 103%;
-}
+
 .inner-addon {
   position: relative;
 }
@@ -46,165 +53,4 @@
 }
 .right-addon input {
     padding-right: 30px;
-}
-.float-right {
-  float: right;
-}
-.float-left {
-	float: left;
-}
-.footer {
-  clear: both;
-  padding-top: 2em;
-
-}
-.button {
-	position: absolute;
-	right:    0.5em;
-	bottom:   0.5em;
-}
-.button1 {
-	position: absolute;
-	right:    3em;
-	bottom:   0.5em;
-
-}
-.card div.col-lg-offset-2, #review div.col-lg-offset-2 {
-  margin-top: 1em;
-  border: 4px solid red;
-}
-
-.card .pull-right, #review .pull-right {
-  margin: 0 0 1em 1em;
-}
-
-.card {
-  height: 30em;
-  overflow-y : auto;
-  width: 100%;
-  border-radius: 5px;
-  border: 1px solid lightgray;
-  margin-bottom: 1em;
-  word-wrap: break-word;
-  font-size: 1.2em;
-}
-
-.Front {
-  background-color:#FFFFFF;
-}
-
-.Back {
-  background-color:#EEEEEE;
-}
-.error {
-  color: red;
-}
-.go-to {
-   border: 0.1em solid green;
-   height: 2.5em;
-   margin-top: 0.7em;
-   vertical-align: middle;
-   width: 6em;
-   margin-right:0.5em;
-}
-
-.cardset {
-  margin: 0.8em;
-  height: 12em;
-  width: 19em;
-  display: inline-block;
-  background-color: #5bc0de;
-  border-color: #46b8da;
-  color: @navFontColor;
-  border-radius: @borderRadius;
-  text-align: center;
-  padding-top: 1em;
-  position:relative;
-}
-.navbar-brand {
-  color: @navFontColor;
-}
-.navigation {
-  background-color: @navColor;
-  border-color: #4cae4c;
-  margin-bottom: 1em;
-  width: 85em;
-  min-height: 50px;
-  position: relative;
-  text-align: justify;
-  cursor: default;
-  border-radius: @borderRadius;
-}
-.jumbo {
-    /*background-color: #d8e9f4;*/
-    color: inherit;
-    margin-bottom: 30px;
-    border-radius: @borderRadius;
-    padding: 60px;
-}
-.card-info {
-  margin: 0.5em;
-  min-height:2.8em;
-}
-.bold {
-  font-weight: bold;
-}
-
-.padding {
-  padding: 1em;
-}
-
-.tab {
-  padding: 0.5em;
-  font-size: 1.4em;
-  font-weight: bold;
-}
-.search-input {
-	 background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-    color: #555;
-    display: block;
-    font-size: 14px;
-    float: right;
-    height: 34px;
-    line-height: 1.42857;
-    padding: 6px 12px;
-    margin-top: 1em;
-    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-    width:100%;
-}
-input {
-  border-radius: @borderRadius;
-}
-
-.content-editable-true {
-  border: 1px dotted #CEECF5;
-  border-radius: @borderRadius;
-  min-width: 1em;
-  min-height: 1em;
-  display:inline-block;
-  background-color: #FBFBEF;
-}
-
-/* styles in src/style directory are applied to the whole page */
-.home {
-  background: #0147A7;
-  color: #fff;
-    padding: 1em;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  margin-top: 50px;
-  display: block;
-}
-
-a {
-  color: #03A9F4;
-}
-
-footer {
-  text-align: center;
-  font-size: 0.8em;
 }

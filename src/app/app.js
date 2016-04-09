@@ -24,13 +24,12 @@ var reqControllers = require.context('.', true, /\.controller\.js$/);
 let requiredControllers = requireAll(reqControllers, true);
 requiredControllers.push(uiRouter);
 
-// const reqCssRules = require.context('.', true, /\.\(c|le\)ss$/);
-const reqCssRules = require.context('..', true, /\.(c|le)ss$/);
+const reqCssRules = require.context('.', true, /\.(c|le)ss$/);
 requireAll(reqCssRules);
 
 // necessary for css to work
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import '../../node_modules/font-awesome/css/font-awesome.min.css';
+// import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+// import '../../node_modules/font-awesome/css/font-awesome.min.css';
 
 require("font-awesome-webpack");
 
