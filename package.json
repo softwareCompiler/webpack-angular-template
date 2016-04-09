@@ -1,6 +1,6 @@
 {
     "name": "app",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "author": "Hao Qin <hqin@liyutech.com>",
     "description": "Template for angular-webpack projects, modified from https://github.com/preboot/angular-webpack.git",
     "engines": {
@@ -24,6 +24,7 @@
         "babel-core": "^6.2.1",
         "babel-loader": "^6.2.0",
         "babel-preset-es2015": "^6.1.18",
+        "bootstrap": "3.3.6",
         "copy-webpack-plugin": "^1.1.1",
         "css-loader": "^0.23.0",
         "extract-text-webpack-plugin": "^1.0.1",
@@ -32,6 +33,7 @@
         "html-webpack-plugin": "^2.7.1",
         "isparta-instrumenter-loader": "^1.0.0",
         "jasmine-core": "^2.3.4",
+        "json-loader": "0.5.4",
         "karma": "^0.13.14",
         "karma-coverage": "^0.5.3",
         "karma-jasmine": "^0.3.6",
@@ -39,6 +41,7 @@
         "karma-sourcemap-loader": "^0.3.7",
         "karma-spec-reporter": "0.0.24",
         "karma-webpack": "^1.7.0",
+        "less-loader":"2.2.3",
         "lodash": "^4.6.1",
         "node-libs-browser": "^1.0.0",
         "npm-install-webpack-plugin": "^3.0.0",

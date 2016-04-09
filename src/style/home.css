@@ -1,19 +1,16 @@
 /* styles in src/style directory are applied to the whole page */
-body {
+.home {
   background: #0147A7;
   color: #fff;
-}
-
-a {
-  color: #03A9F4;
-}
-
-main {
-  padding: 1em;
+    padding: 1em;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   margin-top: 50px;
   display: block;
+}
+
+a {
+  color: #03A9F4;
 }
 
 footer {

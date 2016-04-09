@@ -9,7 +9,20 @@
 	  <base href="/">
   </head>
   <body>
-  	<a class="navbar-brand" ui-sref="login"><i class="fa fa-home"></i>Log In</a>
+
+  <nav class="navigation nav-justified" ng-controller="HomeCtrl">
+    <div class="navbar-header">
+      <a class="navbar-brand" ng-href="#/"><i class="fa fa-home"></i> Home</a>
+      <a class="navbar-brand" ng-show = "loggedIn()" ng-href="#/cardsetSummary" title="Show all cardsets"><i class="fa fa-pencil-square-o"></i> My Cards</a>
+      <a class="navbar-brand" ng-href="#/sharedCards/search" ng-show="login && isSharedUser()" title="Show all shared cardsets"><i class="fa fa-share-alt"></i> Shared Cards</a>
+      <a class="navbar-brand" ng-href="#/new" ng-show="login" title="Create new card set"><i class="fa fa-plus"></i> New Cards</a>
+      <a class="navbar-brand" ng-href="#/quizSummary" ng-show="login" title="Start quiz"><i class="fa fa-check"></i> Quizzes</a>
+      <a class="navbar-brand" ng-href="#/reviewSearch" ng-show="login" title="Start random review"><i class="fa fa-play"></i> Review</a>
+      <a class="navbar-brand float-right" ><i class="fa fa-calendar"></i> {{ date | date:'MM/dd/yyyy' }}</a>
+      <a class="navbar-brand float-right" ng-click="logout()" ng-show="login"><i class="fa fa-power-off"></i> Log out</a>
+    </div>
+  </nav>
+
     <ui-view></ui-view>
   </body>
 </html>

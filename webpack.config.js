@@ -7,6 +7,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 require('url-loader');
+
 // var OfflinePlugin = require('offline-plugin');
 
 
@@ -104,7 +105,12 @@ module.exports = function makeWebpackConfig() {
       // Reference: https://github.com/webpack/style-loader
       // Use style-loader in development.
       loader: isTest ? 'null' : ExtractTextPlugin.extract('style', 'css?sourceMap!postcss')
-    }, {
+    }, 
+      {
+        test: /\.less$/,
+        loader: "style!css!less"
+      },
+    {
       // ASSET LOADER
       // Reference: https://github.com/webpack/file-loader
       // Copy png, jpg, jpeg, gif, svg, woff, woff2, ttf, eot files to output
@@ -226,6 +232,5 @@ module.exports = function makeWebpackConfig() {
     contentBase: './src/public',
     stats: 'minimal'
   };
-
   return config;
 }();
