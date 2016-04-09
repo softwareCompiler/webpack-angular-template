@@ -12,8 +12,7 @@ function requireAll(requireContext, requireControllers) {
     var importModule = requireContext(key);
     if (requireControllers) {
       return importModule.default.name;
-    }
-    else {
+    } else {
       return key;
     }
   });
@@ -27,11 +26,32 @@ requiredControllers.push(uiRouter);
 const reqCssRules = require.context('.', true, /\.(c|le)ss$/);
 requireAll(reqCssRules);
 
-// necessary for css to work
-// import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-// import '../../node_modules/font-awesome/css/font-awesome.min.css';
-
 require("font-awesome-webpack");
+
+
+// console.log(`dom ${Rx.DOM}`)
+// const Rx = require('rx-dom');
+// var aa= JSON.stringify(Rx.DOM);
+// console.log(`dom ${aa}`);
+
+// var textInput = document.querySelector('#User');
+// console.log(`textInput ${textInput}`);
+
+// var throttledInput = Rx.DOM.keyup(textInput)
+//   .pluck('target','value')
+//   .filter( function (text) {
+//     console.log(`text ${text}`)
+
+//     return text.length > 2;
+//   })
+//   .debounce(500)
+//   .distinctUntilChanged();
+
+// throttledInput.subscribe(function(data) {
+//     console.log(`data ${data}`)
+
+// });
+
 
 // install caching service worker
 import offline from 'offline-plugin/runtime'
@@ -39,18 +59,6 @@ offline.install();
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, requiredControllers)
-  .config(['$stateProvider', '$locationProvider', function($stateProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
-    $stateProvider.state('home', {
-      url: '/',
-      template: require('./home/home.html'),
-      controller: 'HomeCtrl'
-    });
-  }])
-  .controller('HomeCtrl', ['$scope', '$state', function($scope, $state) {
-    console.log('within HomeCtrl');
-    $scope.date = new Date();
-  }]);
+angular.module(MODULE_NAME, requiredControllers);
 
 export default MODULE_NAME;
