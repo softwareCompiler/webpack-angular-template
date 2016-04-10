@@ -28,31 +28,6 @@ requireAll(reqCssRules);
 
 require("font-awesome-webpack");
 
-
-// console.log(`dom ${Rx.DOM}`)
-// const Rx = require('rx-dom');
-// var aa= JSON.stringify(Rx.DOM);
-// console.log(`dom ${aa}`);
-
-// var textInput = document.querySelector('#User');
-// console.log(`textInput ${textInput}`);
-
-// var throttledInput = Rx.DOM.keyup(textInput)
-//   .pluck('target','value')
-//   .filter( function (text) {
-//     console.log(`text ${text}`)
-
-//     return text.length > 2;
-//   })
-//   .debounce(500)
-//   .distinctUntilChanged();
-
-// throttledInput.subscribe(function(data) {
-//     console.log(`data ${data}`)
-
-// });
-
-
 // install caching service worker
 import offline from 'offline-plugin/runtime'
 offline.install();
