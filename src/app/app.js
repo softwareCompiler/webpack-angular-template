@@ -32,7 +32,8 @@ require("font-awesome-webpack");
 import offline from 'offline-plugin/runtime'
 offline.install();
 
-const MODULE_NAME = 'app';
+window.MODULE_NAME = 'app';
+const MODULE_NAME = window.MODULE_NAME;
 
 angular.module(MODULE_NAME, requiredControllers);
 
