@@ -23,6 +23,8 @@ var reqControllers = require.context('.', true, /\.controller\.js$/);
 let requiredControllers = requireAll(reqControllers, true);
 requiredControllers.push(uiRouter);
 
+console.log(`requiredControllers ${JSON.stringify(requiredControllers)}`);
+
 const reqCssRules = require.context('.', true, /\.(c|le)ss$/);
 requireAll(reqCssRules);
 
