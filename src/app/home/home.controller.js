@@ -28,10 +28,10 @@ const homeModule = angular.module('app.home', [uiRouter, 'service', 'app.landing
       })
       .subscribe(function(response) {
         if (response.StatusCode === 200) {
-          console.log(`yessss Amazing user ${JSON.stringify(response)}`);
-          $state.go('landing');
-        } else {
-          console.log(`FFF Amazing user ${JSON.stringify(response)}`);
+          var users = _.map(response.Data, function(userObj) {
+            return userObj.User;
+          });
+          $state.go('landing', {"Users": users});
         }
       });
     $state.go('home');

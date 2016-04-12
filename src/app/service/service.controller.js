@@ -19,13 +19,12 @@ const serviceModule = angular.module('service', [])
 					resolve({
 						"StatusCode": 200,
 						"Data": users
-						});
+					});
 				} else {
 					resolve({
 						"StatusCode": 404,
 						"Data": []
-						});
-					// reject(Error("Invalid user name or password"));
+					});
 				}
 			});
 			return Rx.Observable.fromPromise(promise);

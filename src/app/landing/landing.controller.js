@@ -9,12 +9,16 @@ const landingModule = angular.module('app.landing', [uiRouter])
     console.log('class landing ' + $stateProvider);
     $stateProvider.state('landing', {
     	url: '/landing',
+      params: {
+        Users: []
+      },
     	template: require('./landing.html'),
     	controller: 'LandingCtrl'
   	});
   }])
-.controller('LandingCtrl', ['$scope', function($scope) {
-    console.log('class LandingCtrl ' + $scope);
+.controller('LandingCtrl', ['$scope','$stateParams', function($scope, $stateParams) {
+    console.log('users LandingCtrl ' + JSON.stringify($stateParams.Users));
+    $scope.Users = $stateParams.Users;
 }]);
 
 
