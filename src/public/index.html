@@ -12,9 +12,9 @@
 
   <nav class="navigation nav-justified" ng-controller="HomeCtrl" ng-cloak>
     <div class="navbar-header">
-      <a class="navbar-brand" ng-href="#/"><i class="fa fa-home"></i> Home</a>
-      <a class="navbar-brand" ><i class="fa fa-calendar"></i> {{ date | date:'MM/dd/yyyy' }}</a>
-      <a class="navbar-brand float-right" ng-click="logout()" ng-show="!login"><i class="fa fa-power-off"></i> Log out</a>
+      <a class="navbar-brand margin-right" ng-href="#/"><i class="fa fa-home"></i> Home</a>
+      <a class="navbar-brand margin-right" ><i class="fa fa-calendar"></i> {{ date | date:'MM/dd/yyyy' }}</a>
+      <a class="navbar-brand" ng-click="logout()" ng-show="login"><i class="fa fa-power-off"></i> Log out</a>
     </div>
   </nav>
     <ui-view></ui-view>

@@ -26,9 +26,18 @@ body {
   cursor: default;
   border-radius: @borderRadius;
 }
+.left-addon input  {
+    padding-left:  30px;
+}
+.right-addon input {
+    padding-right: 30px;
+}
 
 .margin-top {
   margin-top: 1em;
+}
+.margin-right {
+  margin-right: 1em;
 }
 
 .inner-addon {
@@ -38,19 +47,37 @@ body {
 .inner-addon .fa {
   position: absolute;
   padding: 10px;
-  margin-left: 15px;
+  margin-top: 0.5em;
   pointer-events: none;
 }
 .left-addon .fa {
-   left: 0px;
+   left: 25%;
+   margin-top: 1em;
 }
-.right-addon .fa {
-    right: 0px;
-}
-
 .left-addon input  {
-    padding-left:  30px;
+    padding-left: 30px;
+    margin-top: 1em;
 }
-.right-addon input {
-    padding-right: 30px;
+.float-right {
+   float: right;
+}
+.form-control {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    height: 28px;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 50%;
+    margin-left: 25%;
+}
+.form-control, output {
+    color: #555;
+    display: block;
+    font-size: 14px;
+    line-height: 1.42857;
+}
+.left {
+  margin-left: 48%;
 }
