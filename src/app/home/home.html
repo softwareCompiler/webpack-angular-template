@@ -5,7 +5,7 @@
     <input type="text" id="User" class="form-control" placeholder="User Name" required="true" autofocus="true" name="User" ng-model="User">
     <i class="fa fa-key"></i>
      <input type="password" id="Password" class="form-control" placeholder="Password" required="true" name="Password" ng-model="Password">
-     <button class="btn btn-md btn-success margin-top left" type="submit" name="submit" ng-click="login()">Sign in</button>
+     <button id="loginButton" class="btn btn-md btn-success margin-top left" type="submit" name="submit" ng-click="login()">Sign in</button>
     <button class="btn btn-md btn-success margin-top" ng-click="reset()" ng-show="hasLoggedIn">Reset Application</button>
   </div>
 </form>

@@ -1,24 +1,37 @@
 'use strict';
 
 import angular from 'angular';
+import _ from 'lodash';
 
 const module = require('json!./module.json');
-console.log(`module ${module.name}`);
 
 const users = require('json!././user.json');
 
-console.log(`users ${users}`);
 
-const serviceModule = angular.module('service',[])
-.factory('dao', function() {
-	console.log('doing dao ...');
-  var factory = {};
-  factory.LoginService = function(user) {
-  	console.log(`LoginService ${JSON.stringify(user)}`);
-  	return user;
-  }
-  return factory;
-});
+const serviceModule = angular.module('service', [])
+	.factory('dao', function() {
+		var factory = {};
+		factory.LoginService = function(userLogin) {
+			// simulating an asynchronous operation such as an ajax request
+			var promise = new Promise(function(resolve, reject) {
+				if (_.find(users, userLogin)) {
+					console.log(`LoginService user resolved`);
+					resolve({
+						"StatusCode": 200,
+						"Data": users
+						});
+				} else {
+					resolve({
+						"StatusCode": 404,
+						"Data": []
+						});
+					// reject(Error("Invalid user name or password"));
+				}
+			});
+			return Rx.Observable.fromPromise(promise);
+		};
+		return factory;
+	});
 
 
 export default serviceModule;
