@@ -28,6 +28,9 @@ console.log(`requiredControllers ${JSON.stringify(requiredControllers)}`);
 const reqCssRules = require.context('.', true, /\.(c|le)ss$/);
 requireAll(reqCssRules);
 
+require('../../node_modules/bootstrap/dist/css/bootstrap.min.css');
+require('../../node_modules/font-awesome/css/font-awesome.min.css');
+
 require("font-awesome-webpack");
 
 // install caching service worker
