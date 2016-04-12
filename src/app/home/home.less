@@ -1,6 +1,6 @@
 body {
-  width: 80%;
-  margin: 1% auto;
+  margin: 0;
+  padding: 0;
 }
 
 @navColor:  #5cb85c;
@@ -8,23 +8,24 @@ body {
 @borderRadius: 0.5em;
 
 .navbar-header {
-  width: 96%;
-  margin: 1%;
+  width: 80%;
+  margin: 0 auto;
   display: inline-block;
   vertical-align: middle;
 }
-
 .navbar-brand {
   color: @navFontColor;
 }
-
-.navigation, .home {
+.navigation {
   background-color: @navColor;
   border-color: #4cae4c;
-  min-height: 2em;
+  margin-bottom: 1em;
+  min-height: 50px;
   text-align: justify;
-  cursor: default;
+  cursor: pointer;
   border-radius: @borderRadius;
+  width: 80%;
+  position: relative;
 }
 .left-addon input  {
     padding-left:  30px;
@@ -32,52 +33,41 @@ body {
 .right-addon input {
     padding-right: 30px;
 }
-
+.left-addon .fa {
+   left: 0px;
+}
+.right-addon .fa {
+    right: 0px;
+}
+.inner-addon {
+  position: relative;
+}
+.inner-addon .fa {
+  position: absolute;
+  padding: 10px;
+  margin-left: 15px;
+  pointer-events: none;
+}
 .margin-top {
   margin-top: 1em;
 }
 .margin-right {
   margin-right: 1em;
 }
-
-.inner-addon {
-  position: relative;
-}
-
-.inner-addon .fa {
-  position: absolute;
-  padding: 10px;
-  margin-top: 0.5em;
-  pointer-events: none;
-}
-.left-addon .fa {
-   left: 25%;
-   margin-top: 1em;
-}
-.left-addon input  {
-    padding-left: 30px;
-    margin-top: 1em;
+.margin-bottom {
+  margin-bottom: 1em;
 }
 .float-right {
    float: right;
 }
-.form-control {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-    height: 28px;
-    padding: 6px 12px;
-    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-    width: 50%;
-    margin-left: 25%;
+.center {
+  margin: 0 auto;
 }
-.form-control, output {
-    color: #555;
-    display: block;
-    font-size: 14px;
-    line-height: 1.42857;
+.float-center {
+  float: right;
+  position: relative;
+  right: 50%;
 }
-.left {
-  margin-left: 48%;
+.align-center {
+  text-align: center;
 }
