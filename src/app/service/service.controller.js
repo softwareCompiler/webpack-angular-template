@@ -3,10 +3,7 @@
 import angular from 'angular';
 import _ from 'lodash';
 
-const module = require('json!./module.json');
-
 const users = require('json!././user.json');
-
 
 const serviceModule = angular.module('service', [])
 	.factory('dao', function() {
@@ -32,5 +29,12 @@ const serviceModule = angular.module('service', [])
 		return factory;
 	});
 
+serviceModule.constants = require('json!./constants.json');
 
+serviceModule.createModule = function(submoduleName) {
+	if (submoduleName) {
+		return serviceModule.constants.AppName + '.' + submoduleName;
+	}
+	return serviceModule.constants.AppName;
+};
 export default serviceModule;

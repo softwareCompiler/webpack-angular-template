@@ -2,11 +2,8 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
 
-// import MODULE_NAME from
-
 const landingModule = angular.module('app.landing', [uiRouter])
   .config(['$stateProvider', function($stateProvider) {
-    console.log('class landing ' + $stateProvider);
     $stateProvider.state('landing', {
     	url: '/landing',
       params: {
