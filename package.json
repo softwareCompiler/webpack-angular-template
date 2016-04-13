@@ -1,7 +1,7 @@
 {
     "name": "app",
-    "version": "0.0.6",
-    "author": "Hao Qin <hqin@liyutech.com>",
+    "version": "0.0.7",
+    "author": "Hao Qin <hqin@liyutech.com>, Ying Xiong <yingx@liyutech.com>",
     "description": "Template for angular-webpack projects, modified from https://github.com/preboot/angular-webpack.git",
     "engines": {
         "node": "~4.4.x"

@@ -8,7 +8,7 @@ import Rx from 'rx';
 class HomeModule extends AngularBaseClass {
 
   constructor() {
-    super();
+    super(); // wihtout this call, will get HomeCtrl not defined error.
     return  this.module('home')
       .config(['$stateProvider', function($stateProvider) {
         $stateProvider.state('home', {

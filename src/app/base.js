@@ -3,22 +3,17 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import _ from 'lodash';
 
-import serviceModule from './service/service.controller.js';
+import constants from 'json!./service/constants.json';
 
 class AngularBaseClass {
-	constructor() {
-		this._baseModuleName = 'app';
-	}
 	module() {
 		let name = _.head(arguments);
 		let dependencies = _.union([uiRouter], _.tail(arguments));
-		console.log(`name ${name} dependencies ${dependencies} ${dependencies.length} ++++++++++`);
-		let FullQualifiedModuleName = name ? this._baseModuleName + '.' + name : this._baseModuleName;
-		console.log(`FullQualifiedModuleName ${FullQualifiedModuleName}`);
+		let FullQualifiedModuleName = name ? AngularBaseClass.moduleName + '.' + name : AngularBaseClass.moduleName;
 		return angular.module(FullQualifiedModuleName, dependencies);
 	};
 	static moduleName() {
-		return 'app';
+		return constants.AppName;
 	}
 	static requireAll(requireContext, requireControllers) {
 		return requireContext.keys().map(function(key) {

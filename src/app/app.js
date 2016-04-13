@@ -20,6 +20,4 @@ AngularBaseClass.requireAll(reqCssRules);
 var reqControllers = require.context('.', true, /\.controller\.js$/);
 // See https://webpack.github.io/docs/context.html for inspiration
 let requiredControllers = AngularBaseClass.requireAll(reqControllers, true);
-angular.module(AngularBaseClass.moduleName(), requiredControllers);
-
-export default AngularBaseClass.moduleName();
+export default angular.module(AngularBaseClass.moduleName(), requiredControllers);
