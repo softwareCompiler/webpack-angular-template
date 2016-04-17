@@ -10,13 +10,8 @@
   </head>
   <body>
 
-  <nav class="navigation center" ng-controller="HomeCtrl" ng-cloak>
-    <div class="navbar-header">
-      <a class="navbar-brand" ng-href="#/"><i class="fa fa-home"></i> Home</a>
-      <a class="navbar-brand" ><i class="fa fa-calendar"></i> {{ date | date:'MM/dd/yyyy' }}</a>
-      <a class="navbar-brand" ng-click="logout()" ng-show="login"><i class="fa fa-power-off"></i> Log out</a>
-    </div>
+<nav class="navigation center" nav-bar>
   </nav>
-    <ui-view></ui-view>
+    <ui-view ng-controller="HomeCtrl"></ui-view>
   </body>
 </html>

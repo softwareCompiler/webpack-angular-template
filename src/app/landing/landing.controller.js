@@ -15,7 +15,6 @@ class LandingModule extends AngularBaseClass {
         });
       }])
       .controller('LandingCtrl', ['$scope', '$stateParams', function($scope, $stateParams) {
-        console.log('users LandingCtrl99999 ' + JSON.stringify($stateParams.Users));
         $scope.Users = $stateParams.Users;
       }]);
   }

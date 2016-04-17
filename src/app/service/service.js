@@ -7,17 +7,20 @@ const users = require('json!././user.json');
 
 const serviceModule = angular.module('service', [])
 	.factory('dao', function() {
-		var factory = {};
+		const factory = {};
+		let _userLogin = false;
 		factory.LoginService = function(userLogin) {
 			// simulating an asynchronous operation such as an ajax request
-			var promise = new Promise(function(resolve, reject) {
+			const promise = new Promise(function(resolve, reject) {
 				if (_.find(users, userLogin)) {
 					console.log(`LoginService user resolved`);
+					_userLogin = true;
 					resolve({
 						"StatusCode": 200,
 						"Data": users
 					});
 				} else {
+					_userLogin = false;
 					resolve({
 						"StatusCode": 404,
 						"Data": []
@@ -26,6 +29,12 @@ const serviceModule = angular.module('service', [])
 			});
 			return Rx.Observable.fromPromise(promise);
 		};
+		factory.hasLoggedIn = function() {
+			return _userLogin;
+		};
+		factory.logout = function() {
+			_userLogin = false;
+		}
 		return factory;
 	});
 

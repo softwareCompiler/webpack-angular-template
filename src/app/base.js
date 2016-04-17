@@ -17,9 +17,10 @@ class AngularBaseClass {
 	}
 	static requireAll(requireContext, requireControllers) {
 		return requireContext.keys().map(function(key) {
-			console.log(`key ${key}`);
 			var importModule = requireContext(key);
 			if (requireControllers) {
+							console.log(`???key yes ??? ${importModule.default.name}`);
+
 				return importModule.default.name;
 			} else {
 				return key;

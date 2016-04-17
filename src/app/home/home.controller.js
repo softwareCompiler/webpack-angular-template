@@ -9,7 +9,7 @@ class HomeModule extends AngularBaseClass {
 
   constructor() {
     super(); // wihtout this call, will get HomeCtrl not defined error.
-    return  this.module('home')
+    return this.module('home')
       .config(['$stateProvider', function($stateProvider) {
         $stateProvider.state('home', {
           url: '/',
@@ -33,6 +33,7 @@ class HomeModule extends AngularBaseClass {
             if (response.StatusCode === 200) {
               var users = _.map(response.Data, 'User');
               console.log('usersssss ' + JSON.stringify(users));
+              $scope.login = true;
               $state.go('landing', {
                 "Users": users
               });

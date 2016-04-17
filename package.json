@@ -1,6 +1,6 @@
 {
-    "name": "app",
-    "version": "0.0.7",
+    "name": "webpack-angular-template",
+    "version": "0.0.8",
     "author": "Hao Qin <hqin@liyutech.com>, Ying Xiong <yingx@liyutech.com>",
     "description": "Template for angular-webpack projects, modified from https://github.com/preboot/angular-webpack.git",
     "engines": {
@@ -14,9 +14,9 @@
         "test-watch": "karma start --auto-watch --no-single-run",
         "start": "npm run server"
     },
-
-
     "devDependencies": {
+        "webpack-angular-resource-plugin": "0.0.2",
+        "angular": "^1.5.0",
         "angular-mocks": "^1.5.0",
         "angular-ui-router": "^0.2.18",
         "autoprefixer": "^6.0.3",
@@ -44,6 +44,7 @@
         "karma-webpack": "^1.7.0",
         "less-loader": "2.2.3",
         "lodash": "^4.6.1",
+        "ngrequire-webpack-plugin": "2.0.24",
         "node-libs-browser": "^1.0.0",
         "npm-install-webpack-plugin": "^3.0.0",
         "null-loader": "^0.1.1",
@@ -51,6 +52,7 @@
         "phantomjs-prebuilt": "^2.1.4",
         "postcss-loader": "^0.8.0",
         "raw-loader": "^0.5.1",
+        "require-dir": "0.3.0",
         "rx": "4.1.0",
         "rx-dom": "7.0.3",
         "style-loader": "^0.13.0",
