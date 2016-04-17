@@ -13,7 +13,6 @@ const serviceModule = angular.module('service', [])
 			// simulating an asynchronous operation such as an ajax request
 			const promise = new Promise(function(resolve, reject) {
 				if (_.find(users, userLogin)) {
-					console.log(`LoginService user resolved`);
 					_userLogin = true;
 					resolve({
 						"StatusCode": 200,

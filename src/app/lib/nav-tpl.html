@@ -1,5 +1,5 @@
 <div class="navbar-header" ng-cloak>
-  <a class="navbar-brand" ng-href="/"><i class="fa fa-home"></i> Home</a>
+  <a class="navbar-brand" ng-href="#/"><i class="fa fa-home"></i> Home</a>
   <a class="navbar-brand"><i class="fa fa-calendar"></i> {{ date | date:'MM/dd/yyyy' }}</a>
-  <a class="navbar-brand" ng-show='hasLoggedIn()'><i class="fa fa-power-off"></i> Log out</a>
+  <a class="navbar-brand" ng-show='hasLoggedIn()' ng-href="#/"><i class="fa fa-power-off"></i> Log out</a>
 </div>

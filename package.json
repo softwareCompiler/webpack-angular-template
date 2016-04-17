@@ -6,7 +6,20 @@
     "engines": {
         "node": "~4.4.x"
     },
-
+    "keywords": [
+        "webpack",
+        "angular",
+        "RxJS",
+        "HTML5",
+        "service worker",
+        "offline",
+        "reactive programming",
+        "MVC",
+        "observer",
+        "es6",
+        "es2015",
+        "babel"
+    ],
     "scripts": {
         "build": "webpack -p --config webpack.config.prod.js --bail --progress --profile",
         "server": "webpack-dev-server --history-api-fallback --inline --progress --https",
@@ -15,7 +28,6 @@
         "start": "npm run server"
     },
     "devDependencies": {
-        "webpack-angular-resource-plugin": "0.0.2",
         "angular": "^1.5.0",
         "angular-mocks": "^1.5.0",
         "angular-ui-router": "^0.2.18",
@@ -60,9 +72,54 @@
         "url-loader": "^0.5.7",
         "webpack": "^1.12.13",
         "webpack-dev-server": "^1.14.1",
-        "webpack-shell-plugin": "0.3.2"
+        "webpack-shell-plugin": "0.3.2",
+        "webpack-angular-resource-plugin": "0.0.2"
     },
     "babel": {
         "presets": ["es2015"]
     }
+}
+
+{
+    "name": "webpack-angular-resource-plugin",
+    "version": "0.0.4",
+    "author": "Hao Qin <hqin@liyutech.com>",
+    "description": "Require all AngularJS modules for a Webpack project and return an array of the module names that can be used as dependencies of the main module. Can also batch require other resources such as style sheets and images.",
+    "keywords": [
+        "webpack",
+        "angular",
+        "resource",
+        "batch require",
+        "batch load",
+        "karma"
+    ],
+    "scripts": {
+        "test": "karma start"
+    },
+    "devDependencies": {
+        "angular": "^1.5.0",
+        "angular-ui-router": "^0.2.18",
+        "jasmine-core": "^2.4.1",
+        "phantomjs-prebuilt": "^2.1.7",
+        "css-loader": "^0.23.0",
+        "less-loader": "2.2.3",
+        "file-loader": "^0.8.4",
+        "style-loader": "^0.13.0",
+        "karma": "^0.13.22",
+        "karma-jasmine": "^0.3.8",
+        "karma-phantomjs-launcher": "^1.0.0",
+        "karma-sourcemap-loader": "^0.3.7",
+        "karma-spec-reporter": "0.0.24",
+        "karma-webpack": "^1.7.0",
+        "webpack": "^1.12.14"
+    },
+    "peerDependencies": {
+        "jasmine-core": "^2.4.1",
+        "phantomjs-prebuilt": "^2.1.7"
+    },
+    "repository": {
+        "type": "git",
+        "git": "git@github.com:liyutech/webpack-angular-template"
+    },
+    "license": "MIT"
 }

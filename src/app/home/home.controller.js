@@ -32,8 +32,6 @@ class HomeModule extends AngularBaseClass {
           .subscribe(function(response) {
             if (response.StatusCode === 200) {
               var users = _.map(response.Data, 'User');
-              console.log('usersssss ' + JSON.stringify(users));
-              $scope.login = true;
               $state.go('landing', {
                 "Users": users
               });

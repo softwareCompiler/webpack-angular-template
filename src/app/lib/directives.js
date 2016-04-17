@@ -5,6 +5,7 @@ export default angular.module('directives', ['service'])
     function link(scope, element) {
       scope.date = new Date();
       scope.hasLoggedIn = dao.hasLoggedIn;
+      scope.logout = dao.logout;
     };
     return {
       restrict: 'A',
