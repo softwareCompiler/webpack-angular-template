@@ -3,7 +3,7 @@
 Create a webpack template project which supports AngularJS 1.5, ES6 with Babel, RxJS, and service worker for offline experience. The compiled applicaiton can be dropped to an HTTP server and served at a predefined domain.
 
 <h3>Installation</h3>
-<i>git clone https://github.com:liyutech/webpack-angular-template.git</i>
+<i>git clone git@github.com:liyutech/webpack-angular-template</i>
 <p>
 Run the following command at the root path of the cloned project:
 </p>
