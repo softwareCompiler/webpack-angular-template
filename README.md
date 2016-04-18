@@ -1,6 +1,6 @@
 # webpack-angular-template
 
-Create a webpack template project which supports AngularJS 1.5, ES6 with Babel, RxJS, and service worker for offline experience. The compiled applicaiton can be dropped to an HTTP server and served at a predefined domain.
+Create a webpack template project which supports AngularJS 1.5, ES6 with Babel, RxJS, and service worker for offline experience. This project mainly consists of two controllers, one Angular directive,  and the corresponding views. The compiled applicaiton can be dropped to an HTTP server and served at a predefined domain.
 
 <h3>Installation</h3>
 <i>git clone git@github.com:liyutech/webpack-angular-template</i>
