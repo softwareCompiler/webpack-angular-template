@@ -1,13 +1,11 @@
 'use strict';
 
-var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var OfflinePlugin = require('offline-plugin');
-
-require('string-replace-loader');
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const OfflinePlugin = require('offline-plugin');
 
 const WebpackShellPlugin = require('webpack-shell-plugin');
 
@@ -17,13 +15,8 @@ const PreBuildTask = `ls -l ${PROD_DOMAIN} && rm -rf  ${PROD_DOMAIN} && ls -l ${
 const PROD_DEPLOY_PATH = '/www';
 const PostBuildTask = `cp -r ${PROD_DOMAIN} ${PROD_DEPLOY_PATH}`;
 
-console.log('PostBuildTask ' + PostBuildTask);
-
-require('url-loader');
-require('less-loader');
-
 module.exports = function makeWebpackConfig() {
-  var config = {};
+  let config = {};
   config.entry = {
     app: './src/app/app.js'
   };

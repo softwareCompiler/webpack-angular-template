@@ -6,13 +6,6 @@ var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-require('url-loader');
-
-// var ngRequirePlugin = require('ngrequire-webpack-plugin');
-
-
-// var OfflinePlugin = require('offline-plugin');
-
 
 /**
  * Env
