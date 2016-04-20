@@ -14,7 +14,7 @@ Run the following command at the root path of the cloned project:
 To run in the dev mode:
 <i>npm start</i>
 <p>
-Use a browser to open the following url: https://localhost:8080.
+Use a browser to open the following url: https://localhost:8080. The user name and password for the login fields are Ada and Ada123, respectively.
 </p>
 
 To deploy the application, run the following command at the root of the project:
