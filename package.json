@@ -1,8 +1,8 @@
 {
     "name": "webpack-angular-template",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "author": "Hao Qin <hqin@liyutech.com>, Ying Xiong <yingx@liyutech.com>",
-    "description": "Template for angular-webpack projects, modified from https://github.com/preboot/angular-webpack.git",
+    "description": "Create a webpack template project which supports AngularJS 1.5, ES6 with Babel, RxJS, and service worker for offline experience. This project mainly consists of two controllers, one Angular directive,  and the corresponding views. The compiled applicaiton can be dropped to an HTTP server and served at a predefined domain.",
     "engines": {
         "node": "~4.4.x"
     },

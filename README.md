@@ -2,6 +2,7 @@
 
 Create a webpack template project which supports AngularJS 1.5, ES6 with Babel, RxJS, and service worker for offline experience. This project mainly consists of two controllers, one Angular directive,  and the corresponding views. The compiled applicaiton can be dropped to an HTTP server and served at a predefined domain.
 
+This project is inspired by the project at https://github.com/preboot/angular-webpack.git.
 <h3>Installation</h3>
 <i>```git clone git@github.com:liyutech/webpack-angular-template```</i>
 <p>
@@ -23,7 +24,7 @@ This will compile the application. The compiled files will be output to the doma
 <p>After the compilation is complete, copy the entire domain/ directory to the document root of an HTTP server. Notice that since service workers can only be run under the https protoocol, the HTTP server should be configured to support https.
 </p>
 <p>
-It is assumed the document root of the server is <i>/www</i>. To use a different document root, modify the default defined in webpack.config.prod.js. The deployed application can be accessed at https://localhost:8443/domain.
+It is assumed the document root of the server is <i>/www</i>. To use a different document root, modify the default defined in webpack.config.prod.js. The deployed application can be accessed at https://localhost:8443/domain. The login user name and password are Ada and Ada123, respectively.
 </p>
 Notice that if the browser does not support service workers, the application will fall back to appcache. 
 
