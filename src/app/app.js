@@ -9,6 +9,11 @@ require('../../node_modules/bootstrap/dist/css/bootstrap.min.css');
 require('../../node_modules/font-awesome/css/font-awesome.min.css');
 require("font-awesome-webpack");
 
-var angularResourceUtil = require('webpack-angular-resource-plugin');
+const angularResourceUtil = require('webpack-angular-resource-plugin');
 angularResourceUtil.requireAll(require.context('.', true, /\.(c|le)ss$/));
-export default angular.module('app', angularResourceUtil.requireAll(require.context('.', true, /(controller|service|directives)\.js$/)));
+const submodules = angularResourceUtil.requireAll(require.context('.', true, /(controller|service|directives)\.js$/));
+const mainModule = angular.module('app', submodules)
+	.config(['$locationProvider', function($locationProvider) {
+		$locationProvider.html5Mode(true);
+	}]);
+export default mainModule;
