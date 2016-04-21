@@ -19,12 +19,12 @@ Use a browser to open the following url: https://localhost:8080. The user name a
 
 To deploy the application, run the following command at the root of the project:
 <p><i>npm run build</i></p>
-This will compile the application. The compiled files will be output to the domain/ directory.
+This will compile the application. The compiled files will be output to the webpack-angular-template/ directory.
 
-<p>After the compilation is complete, copy the entire domain/ directory to the document root of an HTTP server. Notice that since service workers can only be run under the https protoocol, the HTTP server should be configured to support https.
+<p>After the compilation is complete, copy the entire webpack-angular-template/ directory to the document root of an HTTP server. Notice that since service workers can only be run under the https protoocol, the HTTP server should be configured to support https.
 </p>
 <p>
-It is assumed the document root of the server is <i>/www</i>. To use a different document root, modify the default defined in webpack.config.prod.js. The deployed application can be accessed at https://localhost:8443/domain. The login user name and password are also Ada and Ada123, respectively.
+It is assumed the document root of the server is <i>/www</i>. To use a different document root, modify the default defined in webpack.config.prod.js. The deployed application can be accessed at https://localhost:8443/webpack-angular-template. The login user name and password are also Ada and Ada123, respectively.
 </p>
 Notice that if the browser does not support service workers, the application will fall back to appcache. 
 

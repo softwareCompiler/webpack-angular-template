@@ -13,7 +13,12 @@ const angularResourceUtil = require('webpack-angular-resource-plugin');
 angularResourceUtil.requireAll(require.context('.', true, /\.(c|le)ss$/));
 const submodules = angularResourceUtil.requireAll(require.context('.', true, /(controller|service|directives)\.js$/));
 const mainModule = angular.module('app', submodules)
-	.config(['$locationProvider', function($locationProvider) {
-		$locationProvider.html5Mode(true);
+	.config(['$locationProvider', '$urlRouterProvider', function($locationProvider, $urlRouterProvider) {
+		$locationProvider.html5Mode({
+			enabled: true,
+			requireBase: true,
+			rewriteLinks: true
+		});
+		$urlRouterProvider.otherwise('home');
 	}]);
 export default mainModule;
