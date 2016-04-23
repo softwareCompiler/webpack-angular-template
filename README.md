@@ -3,12 +3,18 @@
 Create a webpack template project which supports AngularJS 1.5, ES6 with Babel, RxJS, and service worker for offline experience. This project mainly consists of two controllers, one Angular directive,  and the corresponding views. The compiled applicaiton can be dropped to an HTTP server and served at a predefined domain.
 
 This project is inspired by the project at https://github.com/preboot/angular-webpack.git.
+
 <h3>Installation</h3>
 <i>```git clone git@github.com:liyutech/webpack-angular-template```</i>
 <p>
 Run the following command at the root path of the cloned project:
 </p>
 <i>npm install</i>
+
+<h3>Node and npm Versions</h3>
+The versions of nodejs and npm used to develop and test this template:
+<p>nodejs: v4.4.0</p>
+<p>npm: 3.8.6</p>
 
 <h3>Usage Example</h3>
 To run in the dev mode:
