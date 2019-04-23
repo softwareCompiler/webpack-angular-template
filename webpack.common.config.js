@@ -26,8 +26,11 @@ config.module = {
     rules: [{
         test: /\.js$/,
         enforce: "pre",
-        loader: 'babel-loader',
-        exclude: /node_modules/
+        //loader: 'babel-loader',
+        exclude: /node_modules/,
+
+        use: { loader: 'babel-loader', options: { presets: ['@babel/preset-env'] } }
+
     }, {
         test: /\.css$/,
         enforce: "pre",

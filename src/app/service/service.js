@@ -3,7 +3,7 @@
 import angular from 'angular';
 import _ from 'lodash';
 
-const users = require('json!././user.json');
+const users = require('json-loader!././user.json');
 
 const serviceModule = angular.module('service', [])
 	.factory('dao', function() {
