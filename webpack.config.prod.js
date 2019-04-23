@@ -16,45 +16,46 @@ const WebpackShellPlugin = require('webpack-shell-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = function() {
-  config.devtool = 'source-map';
-  // rewrite the base href in index.html
-  common.addLoader({
-    test: /src\/public\/index\.html$/,
-    loader: 'string-replace',
-    query: {
-      search: '<base href="/">',
-      replace: `<base href="/${common.OUTPUT_DIR}/">`
-    }
-  });
-  config.plugins.push(
-    new WebpackShellPlugin({
-      onBuildStart: [PreBuildTask],
-      onExit: [PostBuildTask]
-    }),
-    common.htmlWebpackPlugin,
-    common.extractTextPlugin(false),
-    new webpack.NoErrorsPlugin(),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin(),
-    new CopyWebpackPlugin(
-      [{
-        from: __dirname + '/src/public'
-      }]),
-    new OfflinePlugin({
-      // All options are optional
-      caches: 'all',
-      scope: common.PUBLIC_PATH + '/',
-      updateStrategy: 'all',
-      version: 'v2',
+    config.devtool = 'source-map';
+    // rewrite the base href in index.html
+    common.addLoader({
+        test: /src\/public\/index\.html$/,
+        loader: 'string-replace',
+        query: {
+            search: '<base href="/">',
+            replace: `<base href="/${common.OUTPUT_DIR}/">`
+        }
+    });
+    config.plugins.push(
+        new WebpackShellPlugin({
+            onBuildStart: [PreBuildTask],
+            onExit: [PostBuildTask]
+        }),
+        common.htmlWebpackPlugin,
+        //common.extractTextPlugin(false),
+        common.miniCssExtractPlugin(false),
+        new webpack.NoErrorsPlugin(),
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.UglifyJsPlugin(),
+        new CopyWebpackPlugin(
+            [{
+                from: __dirname + '/src/public'
+            }]),
+        new OfflinePlugin({
+            // All options are optional
+            caches: 'all',
+            scope: common.PUBLIC_PATH + '/',
+            updateStrategy: 'all',
+            version: 'v2',
 
-      ServiceWorker: {
-        output: 'sw.js'
-      },
+            ServiceWorker: {
+                output: 'sw.js'
+            },
 
-      AppCache: {
-        directory: 'appcache/'
-      }
-    })
-  );
-  return config;
+            AppCache: {
+                directory: 'appcache/'
+            }
+        })
+    );
+    return config;
 }();

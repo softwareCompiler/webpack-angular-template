@@ -1,55 +1,60 @@
 // Reference: http://karma-runner.github.io/0.12/config/configuration-file.html
-module.exports = function karmaConfig (config) {
-  config.set({
-    frameworks: [
-      // Reference: https://github.com/karma-runner/karma-jasmine
-      // Set framework to jasmine
-      'jasmine'
-    ],
+//module.exports = function karmaConfig (config) {
+  module.exports = function(config) {
+        config.set({
+            //basePath:
 
-    reporters: [
-      // Reference: https://github.com/mlex/karma-spec-reporter
-      // Set reporter to print detailed results to console
-      'progress',
+            frameworks: [
+                // Reference: https://github.com/karma-runner/karma-jasmine
+                // Set framework to jasmine
+                'jasmine'
+            ],
 
-      // Reference: https://github.com/karma-runner/karma-coverage
-      // Output code coverage files
-      'coverage'
-    ],
+            reporters: [
+                // Reference: https://github.com/mlex/karma-spec-reporter
+                // Set reporter to print detailed results to console
+                'progress',
 
-    files: [
-      // Grab all files in the app folder that contain .spec.
-      'src/tests.webpack.js'
-    ],
+                // Reference: https://github.com/karma-runner/karma-coverage
+                // Output code coverage files
+                'coverage'
+            ],
 
-    preprocessors: {
-      // Reference: http://webpack.github.io/docs/testing.html
-      // Reference: https://github.com/webpack/karma-webpack
-      // Convert files with webpack and load sourcemaps
-      'src/tests.webpack.js': ['webpack', 'sourcemap']
-    },
+            files: [
+                // Grab all files in the app folder that contain .spec.
+                'src/tests.webpack.js'
+            ],
 
-    browsers: [
-      // Run tests using PhantomJS
-      'PhantomJS'
-    ],
+            preprocessors: {
+                // Reference: http://webpack.github.io/docs/testing.html(this web page was delete)
+                // Reference: https://github.com/webpack/karma-webpack
+                // Convert files with webpack and load sourcemaps
+                'src/tests.webpack.js': ['webpack', 'sourcemap']
+            },
 
-    singleRun: true,
+            browsers: [
+                // Run tests using PhantomJS
+                'PhantomJS','Chrome', 'Firefox'
+            ],
 
-    // Configure code coverage reporter
-    coverageReporter: {
-      dir: 'coverage/',
-      reporters: [
-        {type: 'text-summary'},
-        {type: 'html'}
-      ]
-    },
+            singleRun: true,
 
-    webpack: require('./webpack.config'),
+            // Configure code coverage reporter
+            coverageReporter: {
+                dir: 'coverage/',
+                reporters: [
+                    {type: 'text-summary'},
+                    {type: 'html'}
+                ]
+            },
 
-    // Hide webpack build information from output
-    webpackMiddleware: {
-      noInfo: 'errors-only'
-    }
-  });
-};
+            webpack: require('./webpack.config'),
+
+            // Hide webpack build information from output
+            webpackMiddleware: {
+                //noInfo: 'errors-only'
+                stats: 'errors-only'
+            }
+        });
+    };
+}
