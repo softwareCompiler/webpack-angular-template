@@ -3,7 +3,7 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import _ from 'lodash';
 
-import constants from 'json!./service/constants.json';
+import constants from './service/constants.json';
 
 class AngularBaseClass {
 	module() {

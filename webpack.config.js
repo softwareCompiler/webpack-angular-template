@@ -11,7 +11,7 @@ module.exports = function() {
     config.plugins.push(
         common.htmlWebpackPlugin,
        // common.extractTextPlugin(true)
-        common.miniCssExtractPlugin(true)
+        common.miniCssExtractPlugin,
     );
     config.devServer = {
         contentBase: './src/public',

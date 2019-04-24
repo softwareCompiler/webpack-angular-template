@@ -33,7 +33,7 @@ module.exports = function() {
         }),
         common.htmlWebpackPlugin,
         //common.extractTextPlugin(false),
-        common.miniCssExtractPlugin(false),
+        common.miniCssExtractPlugin,
         new webpack.NoErrorsPlugin(),
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.UglifyJsPlugin(),

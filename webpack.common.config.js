@@ -34,7 +34,10 @@ config.module = {
     }, {
         test: /\.css$/,
         enforce: "pre",
-        use: [{loader:'MiniCssExtractPlugin.loader'},{loader: 'postcss-loader',options: {plugins:autoprefixer()}}]
+        use: [
+            {loader:'MiniCssExtractPlugin.loader', options:{publicPath: '../', hmr: process.env.NODE_ENV === 'development',},},
+            {loader: 'postcss-loader',options: {plugins:autoprefixer()},},
+            "css-loader",]
         //options: {plugins:autoprefixer()}
        // loader: ExtractTextPlugin.extract('style', 'css?sourceMap!postcss')
     }, {
@@ -88,9 +91,12 @@ module.exports = {
     //     });
     // }
 
-    miniCssExtractPlugin: function(disable) {
-        return new MiniCssExtractPlugin('[name].[hash].css', {
-            disable: disable
-        });
-    }
-};
+    miniCssExtractPlugin:
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+            chunkFilename: '[id].css',
+        }),
+
+
+
+}; 
