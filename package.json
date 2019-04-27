@@ -19,8 +19,17 @@
   },
   "homepage": "https://github.com/softwareCompiler/webpack-angular-template#readme",
   "devDependencies": {
+    "autoprefixer": "^9.5.1",
+    "bootstrap": "^4.3.1",
+    "css-loader": "^2.1.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "jquery": "^3.4.0",
+    "node-sass": "^4.12.0",
+    "popper.js": "^1.15.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.1",
     "webpack-dev-server": "^3.3.1"
