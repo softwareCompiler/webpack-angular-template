@@ -4,30 +4,38 @@
     <title>Log in Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+   <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">-->
    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+
 
 </head>
 
-<body>
+<body style="background-color: bisque">
 
-<form xmlns="http://www.w3.org/1999/html">
-    <div class="col-lg-6 col-lg-offset-3 margin-top">
-        <h2 class="col-lg-offset-5">Sign in</h2>
+<form class="row" style="margin-top:100px" >
+    <div class="col-lg-3"></div>
+    <div class="col-lg-5 " >
+        <h2 class="col-lg-5">Sign in</h2>
 
-        <div class="input-group">
-        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <div class="input-group mb-3">
+        <div class="input-group-prepend" >
+        <span class="bg-success " ><i class="fa fa-user"></i></span>
+
+        </div>
         <input type="text" class="form-control margin-bottom" placeholder="User Name" required="true" autofocus="true" name="User" >
         </div>
 
-        <div class="input-group">
-        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+        <div class="input-group mb-3">
+        <div class="input-group-prepend" >
+        <span class="bg-success "><i class="fa fa-key"></i></span>
+        </div>
         <input type="password" class="form-control margin-bottom" placeholder="Password" required="true" name="Password" >
         </div>
 
-        <button id="loginButton" class="btn btn-md btn-success margin-top float-center" type="submit" name="submit">Sign in
+        <button id="loginButton" class="btn btn-success " type="submit" name="submit">Sign in
         </button>
     </div>
+    <div class="col-lg-3"></div>
 </form>
 
 <script src="index.js"> </script>

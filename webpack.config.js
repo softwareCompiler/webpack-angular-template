@@ -29,6 +29,20 @@ module.exports = {
                 ]
             },
             {
+                test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+                use: [
+                    "file-loader"
+                ]
+            },
+            //
+            // {
+            //     test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            //     use: [
+            //         "url-loader?limit=10000&minetype=application/font-woff"
+            //     ]
+            // },
+
+            {
                 test: /\.scss$/,
                 use: [
                     {

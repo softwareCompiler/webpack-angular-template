@@ -1,4 +1,10 @@
-body{
-    background: bisque;
+
+
+body {
+    background-color: lightblue;
 }
 
+span {
+    display: inline-block;
+    width: 35px;
+}
